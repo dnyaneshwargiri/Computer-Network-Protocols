@@ -1,0 +1,15 @@
+00:12:39 **** Build of configuration Debug for project prc ****
+make all 
+Building file: ../src/prc.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/prc.d" -MT"src/prc.d" -o "src/prc.o" "../src/prc.c"
+Finished building: ../src/prc.c
+ 
+Building target: prc
+Invoking: GCC C Linker
+gcc  -o "prc"  ./src/prc.o   
+Finished building target: prc
+ 
+00:12:43 **** Incremental Build of configuration Debug for project prc ****
+make all 
+make: Nothing to be done for `all'.

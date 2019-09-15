@@ -1,0 +1,6 @@
+00:12:43 **** Incremental Build of configuration Debug for project prc ****
+make all 
+make: Nothing to be done for `all'.
+
+00:12:44 Build Finished (took 124ms)
+

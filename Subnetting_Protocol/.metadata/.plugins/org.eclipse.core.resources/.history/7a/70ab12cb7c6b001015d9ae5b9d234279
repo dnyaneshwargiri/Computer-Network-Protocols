@@ -1,0 +1,56 @@
+import java.security.PublicKey;
+import java.util.Scanner;
+
+
+public class subnet {
+	Scanner sc = new  Scanner(System.in);
+
+	public String Getbin() 
+	{
+		System.out.println("Enter IP Address in Format.");
+		String ip=sc.next();
+		String [] OctetArray=ip.split("\\.");
+		String Binary=null;
+		for (String string : OctetArray) {
+			
+			int Octet=Integer.parseInt(string);
+			String BinaryOctet=Integer.toBinaryString(Octet);
+			
+			if(BinaryOctet.length()<8)
+			{
+				while(BinaryOctet.length()!=8)
+				{
+					BinaryOctet="0"+BinaryOctet;
+					
+				}
+				
+			}
+			Binary+=BinaryOctet;
+			System.out.println(BinaryOctet);
+		}
+		return Binary;
+	}
+	
+	public void GetClassAndSubnetMask(String ip) {
+		
+		
+	}
+	public void GetSubnetAndNodes(String Binary) 
+	{   int i,Abits,Nabits,NodesToEachSubnets;
+		System.out.println("How many Subnets u need.");
+        i=sc.nextInt();
+        Abits=(int) (Math.log(i) / Math.log(2));
+        System.out.println("No of Bits Need to be Altered are ."+Abits);
+        Nabits=16-Abits;  /*16 or 32 or 8 Depends on IP class*/
+        NodesToEachSubnets=(int) ((Math.pow(2, Nabits))-2);
+        System.out.println("No of Nodes(Different IP Address) Possible  To each Subnets are :"+NodesToEachSubnets);
+        System.out.println("Total IP Addresses Possibles are :"+(i*NodesToEachSubnets));
+        
+	}
+public static void main(String[] args)
+{  
+	subnet s=new subnet();
+	s.GetSubnetAndNodes(s.Getbin());
+	s.GetClassAndSubnetMask(s.ip);
+}
+}
